@@ -23,33 +23,42 @@ taskform.addEventListener('submit', function(e) {
 	taskForm.setAttribute("class", "create-task create-task-inactive view");
 
 	//display the task-list div
-	var taskList = document.getElementById('task-list');
+	var taskList = document.getElementsByClassName('task-list')[0];
 	taskList.setAttribute("class", "todolist todolist-active view");
 
-	// var showinfo = document.getElementById("show-task");
+	var list = document.createElement("li");
+	list.setAttribute("class", "card task");
+	var del = document.createElement('div');
+	del.setAttribute("class", "delete-icon delete-task");
 
-	var d = document.getElementById("task-date");
-	d.innerHTML = date;
+	var taskInfo = document.createElement('div');
+	taskInfo.setAttribute("class", "task-info");
+	var hdate = document.createElement('h3');
+	var hdatetext = document.createTextNode(date);
+	hdate.setAttribute("class", "task-date");
 
-	var tasks = document.getElementById("task-detail");
-	tasks.innerHTML = task;
+	var htime = document.createElement('h3');
+	var htimetext = document.createTextNode(time);
+	htime.setAttribute("class", "task-time");
 
-	var tt = document.getElementById("task-time");
-	tt.innerHTML = time;
+	var detail = document.createElement('p');
+	var detailtext = document.createTextNode(task);
+	detail.setAttribute("class", "task-detail");
 
-	
-	// var task_List = document.getElementById("show-task");
-	// var list = document.createElement("li");
-	// var taskDate = document.createTextNode(d);
-	// var taskInfo = document.createTextNode(tasks);
-	// var taskTime = document.createTextNode(tt);
+	hdate.appendChild(hdatetext);
+	htime.appendChild(htimetext);
 
-	// list.appendChild(taskDate);
-	// list.appendChild(taskInfo);
-	// list.appendChild(taskTime);
-	// task_List.appendChild(list);
-	// console.log(taskList.childNodes);
-	
+	detail.appendChild(detailtext);
+
+	taskInfo.appendChild(hdate);
+	taskInfo.appendChild(htime);
+
+	list.appendChild(del);
+	list.appendChild(taskInfo);
+	list.appendChild(detail);
+
+	taskList.appendChild(list);
+
 e.preventDefault();
 }, false); 
 
