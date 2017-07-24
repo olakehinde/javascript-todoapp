@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>todolist</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<meta name="viewport" content="user-scalable=0, initial-scale=1.0">
 </head>
@@ -13,37 +14,39 @@
 	</div>
 
 	<section class="views">
-		<div class="todolist todolist-inactive view">
+		<div class="todolist todolist-inactive view" id="task-list">
 			<h3 class="header">Tasks</h3>
-			<div class="write-button"></div>
-			<ul class="task-list">
-				<li class="card task">
+			<div class="write-button" id="write"></div>
+			<ul class="task-list" id="child">
+				<li class="card task" id="show-task">
 					<div class="delete-icon delete-task"></div>
 					<div class="task-info">
-						<h3 class="task-date">24th January, 2016</h3>
-						<h3 class="task-time">12:30pm</h3>
+						<h3 class="task-date" id="task-date">24th January, 2016</h3>
+						<h3 class="task-time" id="task-time">12:30pm</h3>
 					</div>
-					<p class="task-detail">slap the hell out of Mr.seamless</p>
+					<p class="task-detail" id="task-detail">slap the hell out of Mr.seamless</p>
 				</li>
 			</ul>
 		</div>
 
-		<div class="create-task create-task-active view">
-			<form class="create-task-form">
+		<div class="create-task create-task-active view" id="task-form">
+			<form class="create-task-form" id="form">
 				<div class="close-icon close-form"></div>
 				<label for="create-task-form" class="header"><h2>New Task</h2></label>
 				<label for="year">Date</label>
-				<input type="text" class="month" placeholder="Month">
-				<input type="text" class="day" placeholder="Day">
-				<input type="text" class="year" placeholder="Year">
+				<input type="text" class="month" placeholder="Month" id="month">
+				<input type="text" class="day" placeholder="Day" id="day">
+				<input type="text" class="year" placeholder="Year" id="year">
 				<label for="task-detail">Task</label>
-				<textarea class="task-detail"></textarea>
+				<textarea class="task-detail" id="task"></textarea>
 				<label for="time">Time</label>
-				<input type="text" class="time" placeholder="Time">
+				<input type="text" class="time" placeholder="Time" id="time">
 				<input type="submit" class="submit" value="Publish">
 			</form>
 		</div>
 	</section>
 
+	<!-- javascript file -->
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
